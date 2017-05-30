@@ -10,7 +10,7 @@
   "product_name": "Metadefender",
   "product_version_regex": ".*",
   "logo": "metadefender.png",
-  "min_phantom_version": "2.0.264",
+  "min_phantom_version": "2.2.44",
   "publisher": "Phantom",
   "package_name": "phantom_metadefender",
   "license": "Copyright (c) Phantom Cyber Corporation 2016",
@@ -18,7 +18,7 @@
     "api_key": {
       "description": "API key",
       "required": true,
-      "data_type": "string",
+      "data_type": "password",
       "order": 0
     }
   },
