@@ -1,7 +1,7 @@
 {
   "appid": "650d2167-b32d-4624-b5ba-374df0e6f0ea",
   "name": "Metadefender",
-  "description": "App that connects to OPSWAT Metadefender for actions like <b>ip reputation</b> and <b>file reputation</b>.",
+  "description": "This App provides reputation capabilities for various data types on OPSWAT Metadefender",
   "type": "reputation",
   "main_module": "metadefender_connector.pyc",
     "app_version": "1.0.6",
@@ -13,7 +13,7 @@
   "min_phantom_version": "2.2.44",
   "publisher": "Phantom",
   "package_name": "phantom_metadefender",
-  "license": "Copyright (c) Phantom Cyber Corporation 2016",
+  "license": "Copyright (c) Phantom Cyber Corporation 2016-2017",
   "configuration": {
     "api_key": {
       "description": "API key",
