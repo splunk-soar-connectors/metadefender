@@ -4,8 +4,8 @@
   "description": "This App provides reputation capabilities for various data types on OPSWAT Metadefender",
   "type": "reputation",
   "main_module": "metadefender_connector.pyc",
-    "app_version": "1.0.6",
-    "utctime_updated": "2017-04-29T02:30:59.000000Z",
+  "app_version": "1.0.7",
+  "utctime_updated": "2017-09-19T23:27:11.000000Z",
   "product_vendor": "OPSWAT",
   "product_name": "Metadefender",
   "product_version_regex": ".*",
@@ -284,7 +284,9 @@
         {
           "data_path": "action_result.parameter.ip",
           "data_type": "string",
-          "contains": ["ip"]
+          "contains": [
+            "ip"
+          ]
         },
         {
           "data_path": "summary.total_objects",
@@ -333,17 +335,24 @@
         {
           "data_path": "action_result.data.*.file_info.md5",
           "data_type": "string",
-          "contains": ["hash, md5"]
+          "contains": [
+            "hash, md5"
+          ]
         },
         {
           "data_path": "action_result.data.*.file_info.sha1",
           "data_type": "string",
-          "contains": ["hash", "sha1"]
+          "contains": [
+            "hash",
+            "sha1"
+          ]
         },
         {
           "data_path": "action_result.data.*.file_info.sha256",
           "data_type": "string",
-          "contains": ["hash, sha256"]
+          "contains": [
+            "hash, sha256"
+          ]
         },
         {
           "data_path": "action_result.data.*.file_info.file_size",
@@ -460,7 +469,12 @@
         {
           "data_path": "action_result.parameter.hash",
           "data_type": "string",
-          "contains": ["hash", "md5", "sha1", "sha256"]
+          "contains": [
+            "hash",
+            "md5",
+            "sha1",
+            "sha256"
+          ]
         },
         {
           "data_path": "summary.total_objects",
