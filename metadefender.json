@@ -1,506 +1,517 @@
 {
-  "appid": "650d2167-b32d-4624-b5ba-374df0e6f0ea",
-  "name": "Metadefender",
-  "description": "App that connects to OPSWAT Metadefender for actions like <b>ip reputation</b> and <b>file reputation</b>.",
-  "type": "reputation",
-  "main_module": "metadefender_connector.pyc",
+    "appid": "650d2167-b32d-4624-b5ba-374df0e6f0ea",
+    "name": "Metadefender",
+    "description": "App that connects to OPSWAT Metadefender for actions like <b>ip reputation</b> and <b>file reputation</b>.",
+    "type": "reputation",
+    "main_module": "metadefender_connector.pyc",
     "app_version": "1.0.6",
     "utctime_updated": "2017-04-29T02:30:59.000000Z",
-  "product_vendor": "OPSWAT",
-  "product_name": "Metadefender",
-  "product_version_regex": ".*",
-  "logo": "metadefender.png",
-  "min_phantom_version": "2.0.264",
-  "publisher": "Phantom",
-  "package_name": "phantom_metadefender",
-  "license": "Copyright (c) Phantom Cyber Corporation 2016",
-  "configuration": {
-    "api_key": {
-      "description": "API key",
-      "required": true,
-      "data_type": "string",
-      "order": 0
-    }
-  },
-  "actions": [
-    {
-      "action": "ip reputation",
-      "description": "Gets information about an IP",
-      "verbose": "",
-      "type": "investigate",
-      "read_only": true,
-      "identifier": "ip_reputation",
-      "render": {
-        "width": 12,
-        "title": "Ip Reputation",
-        "type": "table",
-        "height": 5
-      },
-      "output": [
-        {
-          "data_path": "action_result.data.*.data.address",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.de",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.en",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.es",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.fr",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.ja",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.ru",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.pt-BR",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.geoname_id",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.de",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.en",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.es",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.fr",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.ja",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.ru",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.pt-BR",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.zh-CN",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.iso_code",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.geoname_id",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.location.latitude",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.location.longitude",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.location.time_zone",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.code",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.de",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.en",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.es",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.fr",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.ja",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.ru",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.pt-BR",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.zh-CN",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.geoname_id",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.en",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.es",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.pt-BR",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.subdivisions.*.iso_code",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.subdivisions.*.geoname_id",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.de",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.en",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.es",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.fr",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.ja",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.ru",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.pt-BR",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.zh-CN",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.iso_code",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.geoname_id",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.start_time",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.detected_by",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.source",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.results.*.result",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.results.*.confident",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.results.*.assessment",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.results.*.detecttime",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.results.*.updatetime",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.results.*.alternativeid",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.success",
-          "data_type": "boolean"
-        },
-        {
-          "data_path": "action_result.status",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.message",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.summary",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.summary.detected_by",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.parameter.ip",
-          "data_type": "string",
-          "contains": ["ip"]
-        },
-        {
-          "data_path": "summary.total_objects",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "summary.total_objects_successful",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.postal.code",
-          "data_type": "string"
+    "product_vendor": "OPSWAT",
+    "product_name": "Metadefender",
+    "product_version_regex": ".*",
+    "logo": "logo_opswatmetadefender.svg",
+    "logo_dark": "logo_opswatmetadefender_dark.svg",
+    "min_phantom_version": "2.0.264",
+    "publisher": "Phantom",
+    "package_name": "phantom_metadefender",
+    "license": "Copyright (c) Phantom Cyber Corporation 2016",
+    "configuration": {
+        "api_key": {
+            "description": "API key",
+            "required": true,
+            "data_type": "string",
+            "order": 0
         }
-      ],
-      "versions": "EQ(*)",
-      "parameters": {
-        "ip": {
-          "description": "IP address to query",
-          "data_type": "string",
-          "contains": [
-            "ip"
-          ],
-          "required": true,
-          "primary": true
-        }
-      }
     },
-    {
-      "action": "file reputation",
-      "description": "Gets information about a hash",
-      "verbose": "",
-      "type": "investigate",
-      "read_only": true,
-      "identifier": "file_reputation",
-      "render": {
-        "width": 12,
-        "title": "File Reputation",
-        "type": "table",
-        "height": 5
-      },
-      "output": [
+    "actions": [
         {
-          "data_path": "action_result.data.*.data_id",
-          "data_type": "string"
+            "action": "ip reputation",
+            "description": "Gets information about an IP",
+            "verbose": "",
+            "type": "investigate",
+            "read_only": true,
+            "identifier": "ip_reputation",
+            "render": {
+                "width": 12,
+                "title": "Ip Reputation",
+                "type": "table",
+                "height": 5
+            },
+            "output": [
+                {
+                    "data_path": "action_result.status",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.parameter.ip",
+                    "data_type": "string",
+                    "contains": [
+                        "ip"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.address",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.detected_by",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.geoname_id",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.de",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.en",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.es",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.fr",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.ja",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.pt-BR",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.ru",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.code",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.geoname_id",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.de",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.en",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.es",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.fr",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.ja",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.pt-BR",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.ru",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.zh-CN",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.geoname_id",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.iso_code",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.de",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.en",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.es",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.fr",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.ja",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.pt-BR",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.ru",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.zh-CN",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.location.latitude",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.location.longitude",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.location.time_zone",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.postal.code",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.geoname_id",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.iso_code",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.de",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.en",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.es",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.fr",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.ja",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.pt-BR",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.ru",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.zh-CN",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.geoname_id",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.iso_code",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.en",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.es",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.pt-BR",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.results.*.alternativeid",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.results.*.assessment",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.results.*.confident",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.results.*.detecttime",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.results.*.result",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.results.*.updatetime",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.source",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.start_time",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.success",
+                    "data_type": "boolean"
+                },
+                {
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.summary.detected_by",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric"
+                }
+            ],
+            "versions": "EQ(*)",
+            "parameters": {
+                "ip": {
+                    "description": "IP address to query",
+                    "data_type": "string",
+                    "contains": [
+                        "ip"
+                    ],
+                    "required": true,
+                    "primary": true
+                }
+            }
         },
         {
-          "data_path": "action_result.data.*.file_info.md5",
-          "data_type": "string",
-          "contains": ["hash, md5"]
+            "action": "file reputation",
+            "description": "Gets information about a hash",
+            "verbose": "",
+            "type": "investigate",
+            "read_only": true,
+            "identifier": "file_reputation",
+            "render": {
+                "width": 12,
+                "title": "File Reputation",
+                "type": "table",
+                "height": 5
+            },
+            "output": [
+                {
+                    "data_path": "action_result.status",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.parameter.hash",
+                    "data_type": "string",
+                    "contains": [
+                        "hash",
+                        "md5",
+                        "sha1",
+                        "sha256"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data_id",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.display_name",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.file_size",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.file_type_category",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.file_type_description",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.file_type_extension",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.md5",
+                    "data_type": "string",
+                    "contains": [
+                        "hash, md5"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.sha1",
+                    "data_type": "string",
+                    "contains": [
+                        "hash",
+                        "sha1"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.sha256",
+                    "data_type": "string",
+                    "contains": [
+                        "hash, sha256"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.upload_timestamp",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.parent_data_id",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.data_id",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.in_queue",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.progress_percentage",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.rescan_available",
+                    "data_type": "boolean"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_all_result_a",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_all_result_i",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.*.def_time",
+                    "data_type": "string",
+                    "column_order": 1,
+                    "column_name": "Date Found"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.*.scan_result_i",
+                    "data_type": "numeric",
+                    "column_order": 3,
+                    "column_name": "Scan Result"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.*.scan_time",
+                    "data_type": "numeric",
+                    "column_order": 2,
+                    "column_name": "Scan Time (ms)"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.*.threat_found",
+                    "data_type": "string",
+                    "column_order": 0,
+                    "column_name": "Threat Found"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.start_time",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.total_avs",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.total_detected_avs",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.total_time",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.data.*.top_threat",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.summary.file_result",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric"
+                }
+            ],
+            "versions": "EQ(*)",
+            "parameters": {
+                "hash": {
+                    "description": "Hash (md5, sha1, sha256)",
+                    "data_type": "string",
+                    "contains": [
+                        "hash",
+                        "md5",
+                        "sha1",
+                        "sha256"
+                    ],
+                    "required": true,
+                    "primary": true
+                }
+            }
         },
         {
-          "data_path": "action_result.data.*.file_info.sha1",
-          "data_type": "string",
-          "contains": ["hash", "sha1"]
-        },
-        {
-          "data_path": "action_result.data.*.file_info.sha256",
-          "data_type": "string",
-          "contains": ["hash, sha256"]
-        },
-        {
-          "data_path": "action_result.data.*.file_info.file_size",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.file_info.display_name",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.file_info.upload_timestamp",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.file_info.file_type_category",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.file_info.file_type_extension",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.file_info.file_type_description",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.top_threat",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.data_id",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.in_queue",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.total_avs",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.start_time",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.total_time",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.scan_details.*.def_time",
-          "data_type": "string",
-          "column_order": 1,
-          "column_name": "Date Found"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.scan_details.*.scan_time",
-          "data_type": "numeric",
-          "column_order": 2,
-          "column_name": "Scan Time (ms)"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.scan_details.*.threat_found",
-          "data_type": "string",
-          "column_order": 0,
-          "column_name": "Threat Found"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.scan_details.*.scan_result_i",
-          "data_type": "numeric",
-          "column_order": 3,
-          "column_name": "Scan Result"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.rescan_available",
-          "data_type": "boolean"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.scan_all_result_a",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.scan_all_result_i",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.total_detected_avs",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.progress_percentage",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.parent_data_id",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.status",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.message",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.summary",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.summary.file_result",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.parameter.hash",
-          "data_type": "string",
-          "contains": ["hash", "md5", "sha1", "sha256"]
-        },
-        {
-          "data_path": "summary.total_objects",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "summary.total_objects_successful",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": " action_result.data.*.file_id",
-          "data_type": "string"
+            "action": "test connectivity",
+            "description": "Validates the asset configuration for connectivity.",
+            "type": "test",
+            "read_only": true,
+            "identifier": "test_connectivity",
+            "render": {},
+            "output": [],
+            "versions": "EQ(*)",
+            "parameters": {}
         }
-      ],
-      "versions": "EQ(*)",
-      "parameters": {
-        "hash": {
-          "description": "Hash (md5, sha1, sha256)",
-          "data_type": "string",
-          "contains": [
-            "hash",
-            "md5",
-            "sha1",
-            "sha256"
-          ],
-          "required": true,
-          "primary": true
-        }
-      }
-    },
-    {
-      "action": "test connectivity",
-      "description": "Validates the asset configuration for connectivity.",
-      "type": "test",
-      "read_only": true,
-      "identifier": "test_connectivity",
-      "render": {},
-      "output": [],
-      "versions": "EQ(*)",
-      "parameters": {}
-    }
-  ]
+    ]
 }
