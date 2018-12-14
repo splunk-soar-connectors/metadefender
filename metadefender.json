@@ -1,520 +1,2189 @@
 {
-  "appid": "650d2167-b32d-4624-b5ba-374df0e6f0ea",
-  "name": "Metadefender",
-  "description": "This App provides reputation capabilities for various data types on OPSWAT Metadefender",
-  "type": "reputation",
-  "main_module": "metadefender_connector.pyc",
-  "app_version": "1.0.12",
-  "utctime_updated": "2018-12-07T01:52:21.000000Z",
-  "product_vendor": "OPSWAT",
-  "product_name": "Metadefender",
-  "product_version_regex": ".*",
-  "logo": "metadefender.png",
-  "min_phantom_version": "3.0.247",
-  "publisher": "Phantom",
-  "package_name": "phantom_metadefender",
-  "license": "Copyright (c) Phantom Cyber Corporation 2016-2017",
-  "configuration": {
-    "api_key": {
-      "description": "API key",
-      "required": true,
-      "data_type": "password",
-      "order": 0
-    }
-  },
-  "actions": [
-    {
-      "action": "ip reputation",
-      "description": "Gets information about an IP",
-      "verbose": "",
-      "type": "investigate",
-      "read_only": true,
-      "identifier": "ip_reputation",
-      "render": {
-        "width": 12,
-        "title": "Ip Reputation",
-        "type": "table",
-        "height": 5
-      },
-      "output": [
-        {
-          "data_path": "action_result.data.*.data.address",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.de",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.en",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.es",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.fr",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.ja",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.ru",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.names.pt-BR",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.city.geoname_id",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.de",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.en",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.es",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.fr",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.ja",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.ru",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.pt-BR",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.names.zh-CN",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.iso_code",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.country.geoname_id",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.location.latitude",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.location.longitude",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.location.time_zone",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.code",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.de",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.en",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.es",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.fr",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.ja",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.ru",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.pt-BR",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.names.zh-CN",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.continent.geoname_id",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.en",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.es",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.pt-BR",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.subdivisions.*.iso_code",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.subdivisions.*.geoname_id",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.de",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.en",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.es",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.fr",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.ja",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.ru",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.pt-BR",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.names.zh-CN",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.iso_code",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.registered_country.geoname_id",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.start_time",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.detected_by",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.source",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.results.*.result",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.results.*.confident",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.results.*.assessment",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.results.*.detecttime",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.results.*.updatetime",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.data.scan_results.*.results.*.alternativeid",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.success",
-          "data_type": "boolean"
-        },
-        {
-          "data_path": "action_result.status",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.message",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.summary",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.summary.detected_by",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.parameter.ip",
-          "data_type": "string",
-          "contains": [
-            "ip"
-          ]
-        },
-        {
-          "data_path": "summary.total_objects",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "summary.total_objects_successful",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.data.geo_info.postal.code",
-          "data_type": "string"
+    "appid": "650d2167-b32d-4624-b5ba-374df0e6f0ea",
+    "name": "Metadefender",
+    "description": "This app connects to OPSWAT Metadefender for performing investigative actions pertaining to reputation checking for ip and file",
+    "type": "reputation",
+    "main_module": "metadefender_connector.pyc",
+    "app_version": "1.0.12",
+    "utctime_updated": "2018-01-27T21:13:24.000000Z",
+    "product_vendor": "OPSWAT",
+    "product_name": "Metadefender",
+    "product_version_regex": ".*",
+    "logo": "logo_opswatmetadefender.svg",
+    "logo_dark": "logo_opswatmetadefender_dark.svg",
+    "min_phantom_version": "3.5.210",
+    "publisher": "Phantom",
+    "package_name": "phantom_metadefender",
+    "license": "Copyright (c) 2016-2018 Splunk Inc.",
+    "configuration": {
+        "api_key": {
+            "description": "API key",
+            "required": true,
+            "data_type": "password",
+            "order": 0
         }
-      ],
-      "versions": "EQ(*)",
-      "parameters": {
-        "ip": {
-          "description": "IP address to query",
-          "data_type": "string",
-          "contains": [
-            "ip"
-          ],
-          "required": true,
-          "primary": true
-        }
-      }
     },
-    {
-      "action": "file reputation",
-      "description": "Gets information about a hash",
-      "verbose": "",
-      "type": "investigate",
-      "read_only": true,
-      "identifier": "file_reputation",
-      "render": {
-        "width": 12,
-        "title": "File Reputation",
-        "type": "table",
-        "height": 5
-      },
-      "output": [
+    "actions": [
         {
-          "data_path": "action_result.data.*.data_id",
-          "data_type": "string"
+            "action": "ip reputation",
+            "description": "Gets information about an IP",
+            "verbose": "",
+            "type": "investigate",
+            "read_only": true,
+            "identifier": "ip_reputation",
+            "render": {
+                "width": 12,
+                "title": "Ip Reputation",
+                "type": "table",
+                "height": 5
+            },
+            "output": [
+                {
+                    "data_path": "action_result.status",
+                    "data_type": "string",
+                    "example_values": [
+                        "success"
+                    ]
+                },
+                {
+                    "data_path": "action_result.parameter.ip",
+                    "data_type": "string",
+                    "column_name": "IP",
+                    "column_order": 0,
+                    "contains": [
+                        "ip"
+                    ],
+                    "example_values": [
+                        "0.0.0.0",
+                        "8.8.8.8"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.address",
+                    "data_type": "string",
+                    "example_values": [
+                        "0.0.0.0",
+                        "8.8.8.8"
+                    ],
+                    "contains": [
+                        "ip"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.detected_by",
+                    "data_type": "numeric",
+                    "column_name": "Detected By",
+                    "column_order": 1,
+                    "example_values": [
+                        0,
+                        1
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.geoname_id",
+                    "data_type": "numeric",
+                    "example_values": [
+                        5375480
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.de",
+                    "data_type": "string",
+                    "example_values": [
+                        "Mountain View"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.en",
+                    "data_type": "string",
+                    "example_values": [
+                        "Mountain View"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.es",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.fr",
+                    "data_type": "string",
+                    "example_values": [
+                        "Mountain View"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.ja",
+                    "data_type": "string",
+                    "example_values": [
+                        "030de030a6030f3030c6030f3030d3030e5030fc"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.pt-BR",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.ru",
+                    "data_type": "string",
+                    "example_values": [
+                        "0041c00430004430043d00442004380043d-004120044c0044e"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.city.names.zh-CN",
+                    "data_type": "string",
+                    "example_values": [
+                        "0829205ef707ef405c24"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.code",
+                    "data_type": "string",
+                    "example_values": [
+                        "NA"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.geoname_id",
+                    "data_type": "numeric",
+                    "example_values": [
+                        6255149
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.de",
+                    "data_type": "string",
+                    "example_values": [
+                        "Nordamerika"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.en",
+                    "data_type": "string",
+                    "example_values": [
+                        "North America"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.es",
+                    "data_type": "string",
+                    "example_values": [
+                        "Norteam000e9rica"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.fr",
+                    "data_type": "string",
+                    "example_values": [
+                        "Am000e9rique du Nord"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.ja",
+                    "data_type": "string",
+                    "example_values": [
+                        "05317030a2030e1030ea030ab"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.pt-BR",
+                    "data_type": "string",
+                    "example_values": [
+                        "Am000e9rica do Norte"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.ru",
+                    "data_type": "string",
+                    "example_values": [
+                        "00421004350043200435004400043d004300044f 004100043c0043500440004380043a00430"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.continent.names.zh-CN",
+                    "data_type": "string",
+                    "example_values": [
+                        "0531707f8e06d32"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.geoname_id",
+                    "data_type": "numeric",
+                    "example_values": [
+                        6252001
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.iso_code",
+                    "data_type": "string",
+                    "example_values": [
+                        "US"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.de",
+                    "data_type": "string",
+                    "example_values": [
+                        "USA"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.en",
+                    "data_type": "string",
+                    "example_values": [
+                        "United States"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.es",
+                    "data_type": "string",
+                    "example_values": [
+                        "Estados Unidos"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.fr",
+                    "data_type": "string",
+                    "example_values": [
+                        "000c9tats-Unis"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.ja",
+                    "data_type": "string",
+                    "example_values": [
+                        "030a2030e1030ea030ab0540808846056fd"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.pt-BR",
+                    "data_type": "string",
+                    "example_values": [
+                        "Estados Unidos"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.ru",
+                    "data_type": "string",
+                    "example_values": [
+                        "004210044800430"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.country.names.zh-CN",
+                    "data_type": "string",
+                    "example_values": [
+                        "07f8e056fd"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.location.latitude",
+                    "data_type": "numeric",
+                    "example_values": [
+                        37.386
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.location.longitude",
+                    "data_type": "numeric",
+                    "example_values": [
+                        -122.0838
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.location.metro_code",
+                    "data_type": "numeric",
+                    "example_values": [
+                        807
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.location.time_zone",
+                    "data_type": "string",
+                    "example_values": [
+                        "America/Los_Angeles"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.postal.code",
+                    "data_type": "string",
+                    "example_values": [
+                        "94035"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.geoname_id",
+                    "data_type": "numeric",
+                    "example_values": [
+                        6252001
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.iso_code",
+                    "data_type": "string",
+                    "example_values": [
+                        "US"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.de",
+                    "data_type": "string",
+                    "example_values": [
+                        "USA"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.en",
+                    "data_type": "string",
+                    "example_values": [
+                        "United States"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.es",
+                    "data_type": "string",
+                    "example_values": [
+                        "Estados Unidos"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.fr",
+                    "data_type": "string",
+                    "example_values": [
+                        "000c9tats-Unis"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.ja",
+                    "data_type": "string",
+                    "example_values": [
+                        "030a2030e1030ea030ab0540808846056fd"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.pt-BR",
+                    "data_type": "string",
+                    "example_values": [
+                        "Estados Unidos"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.ru",
+                    "data_type": "string",
+                    "example_values": [
+                        "004210044800430"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.registered_country.names.zh-CN",
+                    "data_type": "string",
+                    "example_values": [
+                        "07f8e056fd"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.geoname_id",
+                    "data_type": "numeric",
+                    "example_values": [
+                        5332921
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.iso_code",
+                    "data_type": "string",
+                    "example_values": [
+                        "CA"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.de",
+                    "data_type": "string",
+                    "example_values": [
+                        "Kalifornien"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.en",
+                    "data_type": "string",
+                    "example_values": [
+                        "California"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.es",
+                    "data_type": "string",
+                    "example_values": [
+                        "California"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.fr",
+                    "data_type": "string",
+                    "example_values": [
+                        "Californie"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.ja",
+                    "data_type": "string",
+                    "example_values": [
+                        "030ab030ea030d5030a9030eb030cb030a205dde"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.pt-BR",
+                    "data_type": "string",
+                    "example_values": [
+                        "Calif000f3rnia"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.ru",
+                    "data_type": "string",
+                    "example_values": [
+                        "0041a004300043b00438004440043e004400043d004380044f"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.geo_info.subdivisions.*.names.zh-CN",
+                    "data_type": "string",
+                    "example_values": [
+                        "052a0052290798f05c3c04e9a05dde"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.results.*.alternativeid",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.results.*.assessment",
+                    "data_type": "string",
+                    "example_values": [
+                        "",
+                        "spam"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.results.*.confident",
+                    "data_type": "string",
+                    "example_values": [
+                        "",
+                        70
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.results.*.detecttime",
+                    "data_type": "string",
+                    "example_values": [
+                        "",
+                        "2018-12-04T13:42:29.534168Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.results.*.result",
+                    "data_type": "string",
+                    "example_values": [
+                        "unknown",
+                        "blacklisted"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.results.*.updatetime",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-12-12T09:08:11.091Z",
+                        "2018-12-04T12:32:58.000000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.scan_results.*.source",
+                    "data_type": "string",
+                    "example_values": [
+                        "reputation.alienvault.com",
+                        "stopforumspam.com"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data.start_time",
+                    "data_type": "string",
+                    "column_name": "Start Time",
+                    "column_order": 2,
+                    "example_values": [
+                        "2018-12-12T09:08:11.008Z",
+                        "2018-12-12T08:35:30.364Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.success",
+                    "data_type": "boolean",
+                    "column_name": "Success",
+                    "column_order": 3,
+                    "example_values": [
+                        false,
+                        true
+                    ]
+                },
+                {
+                    "data_path": "action_result.summary.detected_by",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0,
+                        1
+                    ]
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string",
+                    "example_values": [
+                        "Detected by: 0",
+                        "Detected by: 1"
+                    ]
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
+                }
+            ],
+            "versions": "EQ(*)",
+            "parameters": {
+                "ip": {
+                    "description": "IP address to query",
+                    "data_type": "string",
+                    "contains": [
+                        "ip"
+                    ],
+                    "required": true,
+                    "primary": true
+                }
+            }
         },
         {
-          "data_path": "action_result.data.*.file_info.md5",
-          "data_type": "string",
-          "contains": [
-            "hash, md5"
-          ]
+            "action": "file reputation",
+            "description": "Gets information about a hash",
+            "verbose": "",
+            "type": "investigate",
+            "read_only": true,
+            "identifier": "file_reputation",
+            "parameters": {
+                "hash": {
+                    "description": "Hash (md5, sha1, sha256)",
+                    "data_type": "string",
+                    "contains": [
+                        "hash",
+                        "md5",
+                        "sha1",
+                        "sha256"
+                    ],
+                    "required": true,
+                    "primary": true
+                }
+            },
+            "render": {
+                "width": 12,
+                "title": "File Reputation",
+                "type": "table",
+                "height": 5
+            },
+            "output": [
+                {
+                    "data_path": "action_result.status",
+                    "data_type": "string",
+                    "example_values": [
+                        "success"
+                    ]
+                },
+                {
+                    "data_path": "action_result.parameter.hash",
+                    "data_type": "string",
+                    "contains": [
+                        "hash",
+                        "md5",
+                        "sha1",
+                        "sha256"
+                    ],
+                    "example_values": [
+                        "77AB8B360C0D5BB07E61D91D7A114A813797DFA0328B90A010DFCC30CE465679"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.archived",
+                    "data_type": "boolean",
+                    "example_values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.data_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "ZDE4MDgyM3JKNFhmY3EyTFhya3I3R3FxaDht"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "ZDE4MDgyM3JKNFhmY3EyTFg"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.display_name",
+                    "data_type": "string",
+                    "example_values": [
+                        "test.doc"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.file_size",
+                    "data_type": "numeric",
+                    "example_values": [
+                        22528
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.file_type_category",
+                    "data_type": "string",
+                    "example_values": [
+                        "D"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.file_type_description",
+                    "data_type": "string",
+                    "example_values": [
+                        "Microsoft Word Document"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.file_type_extension",
+                    "data_type": "string",
+                    "example_values": [
+                        "docx"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.md5",
+                    "data_type": "string",
+                    "contains": [
+                        "hash, md5",
+                        "md5"
+                    ],
+                    "example_values": [
+                        "F8B03C9F5E359AA0620859CA42E59CCE"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.sha1",
+                    "data_type": "string",
+                    "contains": [
+                        "hash",
+                        "sha1"
+                    ],
+                    "example_values": [
+                        "C46143B392F8A5B2F5B3A537C8FFF2E181DB1815"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.sha256",
+                    "data_type": "string",
+                    "contains": [
+                        "hash, sha256",
+                        "sha256"
+                    ],
+                    "example_values": [
+                        "77AB8B360C0D5BB07E61D91D7A114A813797DFA0328B90A010DFCC30CE465679"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.file_info.upload_timestamp",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T20:33:15.342Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.hash_results.wa",
+                    "data_type": "boolean",
+                    "example_values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.last_data_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "ZDE4MDgyM3JKNFhmY3EyTFhya3I3R3FxaDht"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.parent_data_id",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.process_info.blocked_reason",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.process_info.file_type_skipped_scan",
+                    "data_type": "boolean",
+                    "example_values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.process_info.profile",
+                    "data_type": "string",
+                    "example_values": [
+                        "File scan"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.process_info.progress_percentage",
+                    "data_type": "numeric",
+                    "example_values": [
+                        100
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.process_info.result",
+                    "data_type": "string",
+                    "example_values": [
+                        "Allowed"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.process_info.user_agent",
+                    "data_type": "string",
+                    "example_values": [
+                        "MDClient"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.rest_version",
+                    "data_type": "string",
+                    "example_values": [
+                        "4"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_result_history_length",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.data_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "ZDE4MDgyM3JKNFhmY3EyTFhya3I3R3FxaDht"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.in_queue",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.progress_percentage",
+                    "data_type": "numeric",
+                    "example_values": [
+                        100
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.rescan_available",
+                    "data_type": "boolean",
+                    "example_values": [
+                        false,
+                        true
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_all_result_a",
+                    "data_type": "string",
+                    "example_values": [
+                        "No Threat Detected"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_all_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.*.def_time",
+                    "data_type": "string",
+                    "column_order": 1,
+                    "column_name": "Date Found"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.*.scan_result_i",
+                    "data_type": "numeric",
+                    "column_order": 3,
+                    "column_name": "Scan Result"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.*.scan_time",
+                    "data_type": "numeric",
+                    "column_order": 2,
+                    "column_name": "Scan Time (ms)"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.*.threat_found",
+                    "data_type": "string",
+                    "column_order": 0,
+                    "column_name": "Threat Found"
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.AegisLab.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-22T01:00:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.AegisLab.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.AegisLab.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.AegisLab.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.AegisLab.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        15
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Agnitum.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-20T08:55:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Agnitum.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Agnitum.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        4
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Agnitum.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Agnitum.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        28
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Ahnlab.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T15:46:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Ahnlab.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Ahnlab.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        11
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Ahnlab.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Ahnlab.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        21
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Antiy.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T13:42:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Antiy.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Antiy.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        2
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Antiy.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Antiy.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        14
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Avira.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-21T00:00:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Avira.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Avira.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Avira.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Avira.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        16
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.BitDefender.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T10:39:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.BitDefender.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.BitDefender.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        5
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.BitDefender.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.BitDefender.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        27
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ByteHero.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-22T00:00:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ByteHero.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ByteHero.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        254
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ByteHero.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ByteHero.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        12
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ClamAV.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T12:45:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ClamAV.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ClamAV.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        59
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ClamAV.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ClamAV.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        4
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Cyren.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T13:09:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Cyren.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Cyren.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        10
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Cyren.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Cyren.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        22
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ESET.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T00:00:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ESET.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ESET.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        4
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ESET.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ESET.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        28
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Emsisoft.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T08:21:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Emsisoft.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Emsisoft.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        4
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Emsisoft.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Emsisoft.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        28
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.F-prot.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T10:24:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.F-prot.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.F-prot.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.F-prot.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.F-prot.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        32
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.F-secure.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-22T02:05:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.F-secure.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.F-secure.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        626
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.F-secure.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.F-secure.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        15
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Filseclab.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-20T06:57:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Filseclab.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Filseclab.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        181
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Filseclab.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Filseclab.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        7
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Fortinet.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-22T00:00:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Fortinet.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Fortinet.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        28
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Fortinet.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Fortinet.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        4
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Hauri.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T00:00:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Hauri.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Hauri.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        2
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Hauri.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Hauri.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        30
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Huorong.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-21T09:24:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Huorong.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Huorong.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        2
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Huorong.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Huorong.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        30
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Ikarus.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T12:10:37.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Ikarus.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Ikarus.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        2
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Ikarus.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Ikarus.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        30
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.K7.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T11:35:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.K7.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.K7.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        2
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.K7.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.K7.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        30
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.McAfee.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T00:00:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.McAfee.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.McAfee.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        9
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.McAfee.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.McAfee.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        23
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.NANOAV.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T07:07:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.NANOAV.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.NANOAV.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        8
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.NANOAV.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.NANOAV.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        24
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Preventon.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T06:37:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Preventon.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Preventon.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        40
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Preventon.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Preventon.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        7
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Quick Heal.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-22T09:38:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Quick Heal.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Quick Heal.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        4
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Quick Heal.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Quick Heal.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        28
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.SUPERAntiSpyware.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T01:30:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.SUPERAntiSpyware.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.SUPERAntiSpyware.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1044
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.SUPERAntiSpyware.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.SUPERAntiSpyware.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        19
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Sophos.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T01:23:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Sophos.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Sophos.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        8
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Sophos.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Sophos.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        24
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TACHYON.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T05:00:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TACHYON.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TACHYON.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        10
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TACHYON.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TACHYON.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        22
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ThreatTrack.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-20T08:10:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ThreatTrack.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ThreatTrack.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        12
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ThreatTrack.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.ThreatTrack.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        20
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Total Defense.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-22T00:00:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Total Defense.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Total Defense.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        5
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Total Defense.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Total Defense.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        27
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TrendMicro House Call.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-21T21:07:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TrendMicro House Call.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TrendMicro House Call.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        748
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TrendMicro House Call.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TrendMicro House Call.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        18
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TrendMicro.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-22T06:02:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TrendMicro.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TrendMicro.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        637
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TrendMicro.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.TrendMicro.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        20
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Vir.IT ML.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-21T14:46:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Vir.IT ML.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Vir.IT ML.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        3
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Vir.IT ML.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Vir.IT ML.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        29
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Vir.IT eXplorer.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-22T14:46:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Vir.IT eXplorer.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Vir.IT eXplorer.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        5
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Vir.IT eXplorer.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Vir.IT eXplorer.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        27
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.VirusBlokAda.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T08:54:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.VirusBlokAda.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.VirusBlokAda.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        5
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.VirusBlokAda.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.VirusBlokAda.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        27
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Xvirus Personal Guard.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-22T08:19:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Xvirus Personal Guard.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Xvirus Personal Guard.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        55
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Xvirus Personal Guard.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Xvirus Personal Guard.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        8
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Zillya!.def_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-22T10:07:00.000Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Zillya!.scan_result_i",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Zillya!.scan_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        2
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Zillya!.threat_found",
+                    "data_type": "string",
+                    "example_values": [
+                        ""
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.scan_details.Zillya!.wait_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        30
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.start_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-08-23T20:33:15.357Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.total_avs",
+                    "data_type": "numeric",
+                    "example_values": [
+                        35
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.total_detected_avs",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.scan_results.total_time",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1063
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.share_file",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.top_threat",
+                    "data_type": "numeric",
+                    "example_values": [
+                        -1
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.votes.down",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.votes.up",
+                    "data_type": "numeric",
+                    "example_values": [
+                        0
+                    ]
+                },
+                {
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.summary.file_result",
+                    "data_type": "string",
+                    "example_values": [
+                        "No Threat Detected"
+                    ]
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string",
+                    "example_values": [
+                        "File result: No Threat Detected"
+                    ]
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
+                }
+            ],
+            "versions": "EQ(*)"
         },
         {
-          "data_path": "action_result.data.*.file_info.sha1",
-          "data_type": "string",
-          "contains": [
-            "hash",
-            "sha1"
-          ]
-        },
-        {
-          "data_path": "action_result.data.*.file_info.sha256",
-          "data_type": "string",
-          "contains": [
-            "hash, sha256"
-          ]
-        },
-        {
-          "data_path": "action_result.data.*.file_info.file_size",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.file_info.display_name",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.file_info.upload_timestamp",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.file_info.file_type_category",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.file_info.file_type_extension",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.file_info.file_type_description",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.top_threat",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.data_id",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.in_queue",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.total_avs",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.start_time",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.total_time",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.scan_details.*.def_time",
-          "data_type": "string",
-          "column_order": 1,
-          "column_name": "Date Found"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.scan_details.*.scan_time",
-          "data_type": "numeric",
-          "column_order": 2,
-          "column_name": "Scan Time (ms)"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.scan_details.*.threat_found",
-          "data_type": "string",
-          "column_order": 0,
-          "column_name": "Threat Found"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.scan_details.*.scan_result_i",
-          "data_type": "numeric",
-          "column_order": 3,
-          "column_name": "Scan Result"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.rescan_available",
-          "data_type": "boolean"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.scan_all_result_a",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.scan_all_result_i",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.total_detected_avs",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.scan_results.progress_percentage",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "action_result.data.*.parent_data_id",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.status",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.message",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.summary",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.summary.file_result",
-          "data_type": "string"
-        },
-        {
-          "data_path": "action_result.parameter.hash",
-          "data_type": "string",
-          "contains": [
-            "hash",
-            "md5",
-            "sha1",
-            "sha256"
-          ]
-        },
-        {
-          "data_path": "summary.total_objects",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": "summary.total_objects_successful",
-          "data_type": "numeric"
-        },
-        {
-          "data_path": " action_result.data.*.file_id",
-          "data_type": "string"
+            "action": "test connectivity",
+            "description": "Validates the asset configuration for connectivity",
+            "type": "test",
+            "read_only": true,
+            "identifier": "test_connectivity",
+            "render": {},
+            "output": [],
+            "versions": "EQ(*)",
+            "parameters": {}
         }
-      ],
-      "versions": "EQ(*)",
-      "parameters": {
-        "hash": {
-          "description": "Hash (md5, sha1, sha256)",
-          "data_type": "string",
-          "contains": [
-            "hash",
-            "md5",
-            "sha1",
-            "sha256"
-          ],
-          "required": true,
-          "primary": true
-        }
-      }
-    },
-    {
-      "action": "test connectivity",
-      "description": "Validates the asset configuration for connectivity.",
-      "type": "test",
-      "read_only": true,
-      "identifier": "test_connectivity",
-      "render": {},
-      "output": [],
-      "versions": "EQ(*)",
-      "parameters": {}
-    }
-  ]
+    ]
 }
