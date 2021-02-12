@@ -1,5 +1,5 @@
 # File: metadefender_connector.py
-# Copyright (c) 2016-2019 Splunk Inc.
+# Copyright (c) 2016-2021 Splunk Inc.
 #
 # SPLUNK CONFIDENTIAL - Use or disclosure of this material in whole or in part
 # without a valid written license from Splunk Inc. is PROHIBITED.
@@ -47,7 +47,7 @@ class MetadefenderConnector(BaseConnector):
         try:
             resp_json = r.json()
         except Exception as e:
-            return (phantom.APP_ERROR, "Could not convert response to JSON. {}", format(e))
+            return (phantom.APP_ERROR, "Could not convert response to JSON. {}".format(e))
 
         return (phantom.APP_SUCCESS, resp_json)
 
@@ -61,7 +61,7 @@ class MetadefenderConnector(BaseConnector):
 
         config = self.get_config()
 
-        headers = {'Authorization': "apikey {0}".format(config[METADEFENDER_CONFIG_API_KEY])}
+        headers = {'apikey': config[METADEFENDER_CONFIG_API_KEY]}
 
         ret_val, response = self._make_rest_call(endpoint, headers)
 
@@ -70,7 +70,7 @@ class MetadefenderConnector(BaseConnector):
 
         action_result.add_data(response)
 
-        action_result.set_summary({'detected_by': response['data']['detected_by']})
+        action_result.set_summary({'detected_by': response['lookup_results']['detected_by']})
         return action_result.set_status(phantom.APP_SUCCESS)
 
     def _file_reputation(self, params):
@@ -78,12 +78,11 @@ class MetadefenderConnector(BaseConnector):
         action_result = self.add_action_result(ActionResult(params))
 
         file = params[METADEFENDER_JSON_HASH]
+        additional_info = params.get(METADEFENDER_JSON_ADDITIONAL_INFO, METADEFENDER_ADDITIONAL_INFO_DEFAULT)
 
         config = self.get_config()
 
         headers = {'apikey': config[METADEFENDER_CONFIG_API_KEY]}
-
-        headers.update({'file_metadata': "1"})
 
         endpoint = METADEFENDER_API_FILE_REPUTATION.format(file=file)
 
@@ -91,6 +90,21 @@ class MetadefenderConnector(BaseConnector):
 
         if (phantom.is_fail(ret_val)):
             return (action_result.set_status(phantom.APP_ERROR, "Could not complete rest call", response))
+
+        try:
+            response["additional_details"] = additional_details = dict()
+            additional_info_keys = response.get("additional_info", list())
+            # if action parameter additional_info is checked and response has keys to fetch additional data
+            if additional_info and additional_info_keys:
+                for key in additional_info_keys:
+                    info_endpoint = METADEFENDER_API_ADDITIONAL_INFO.format(file=file, additional_info_key=key)
+                    ret_val, additional_info_response = self._make_rest_call(info_endpoint, headers)
+                    if phantom.is_fail(ret_val):  # Not throwing error for additional_data, just logging
+                        self.debug_print("Could not fetch additional_info for key {}".format(key))
+                    else:
+                        additional_details[key] = additional_info_response
+        except Exception as e:
+            self.debug_print("Error while fetching additional info. Error: {}".format(e))
 
         action_result.add_data(response)
         if 'scan_results' in response:
@@ -113,7 +127,7 @@ class MetadefenderConnector(BaseConnector):
 
         config = self.get_config()
 
-        headers = {'Authorization': "apikey {0}".format(config[METADEFENDER_CONFIG_API_KEY])}
+        headers = {'apikey': config[METADEFENDER_CONFIG_API_KEY]}
 
         ret_val, response = self._make_rest_call(endpoint, headers)
 
@@ -174,6 +188,6 @@ if __name__ == '__main__':
         ret_val = connector._handle_action(json.dumps(in_json), None)
 
         # Dump the return value
-        print ret_val
+        print(ret_val)
 
     exit(0)
