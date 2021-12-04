@@ -12,6 +12,7 @@
     "logo": "logo_opswatmetadefender.svg",
     "logo_dark": "logo_opswatmetadefender_dark.svg",
     "min_phantom_version": "4.9.39220",
+    "fips_compliant": true,
     "publisher": "Splunk",
     "package_name": "phantom_metadefender",
     "license": "Copyright (c) 2016-2021 Splunk Inc.",
