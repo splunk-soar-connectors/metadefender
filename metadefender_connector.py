@@ -88,7 +88,7 @@ class MetadefenderConnector(BaseConnector):
         action_result = self.add_action_result(ActionResult(params))
 
         file = params[METADEFENDER_JSON_HASH]
-        additional_info = params.get(METADEFENDER_JSON_ADDITIONAL_INFO, METADEFENDER_ADDITIONAL_INFO_DEFAULT)
+        additional_info = params.get(METADEFENDER_JSON_ADDITIONAL_INFO, True)
 
         config = self.get_config()
 
