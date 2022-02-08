@@ -1,20 +1,29 @@
 # File: metadefender_connector.py
-# Copyright (c) 2016-2021 Splunk Inc.
 #
-# SPLUNK CONFIDENTIAL - Use or disclosure of this material in whole or in part
-# without a valid written license from Splunk Inc. is PROHIBITED.
-
+# Copyright (c) 2016-2022 Splunk Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software distributed under
+# the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+# either express or implied. See the License for the specific language governing permissions
+# and limitations under the License.
+#
+#
 # Phantom imports
 import phantom.app as phantom
-from phantom.base_connector import BaseConnector
+import requests
+# Required library imports
+import simplejson as json
 from phantom.action_result import ActionResult
+from phantom.base_connector import BaseConnector
 
 # THIS Connector imports
 from metadefender_consts import *
-
-# Required library imports
-import simplejson as json
-import requests
 
 
 class MetadefenderConnector(BaseConnector):
@@ -33,7 +42,7 @@ class MetadefenderConnector(BaseConnector):
 
         try:
 
-            r = requests.get(full_url, headers=headers)
+            r = requests.get(full_url, headers=headers, timeout=DEFAULT_TIMEOUT)
 
         except Exception as e:
 
@@ -78,7 +87,7 @@ class MetadefenderConnector(BaseConnector):
         action_result = self.add_action_result(ActionResult(params))
 
         file = params[METADEFENDER_JSON_HASH]
-        additional_info = params.get(METADEFENDER_JSON_ADDITIONAL_INFO, METADEFENDER_ADDITIONAL_INFO_DEFAULT)
+        additional_info = params.get(METADEFENDER_JSON_ADDITIONAL_INFO, True)
 
         config = self.get_config()
 
@@ -166,6 +175,7 @@ class MetadefenderConnector(BaseConnector):
 if __name__ == '__main__':
     # Imports
     import sys
+
     import pudb
 
     # Breakpoint at runtime
@@ -190,4 +200,4 @@ if __name__ == '__main__':
         # Dump the return value
         print(ret_val)
 
-    exit(0)
+    sys.exit(0)
