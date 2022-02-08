@@ -12,6 +12,8 @@
 # the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
 # either express or implied. See the License for the specific language governing permissions
 # and limitations under the License.
+DEFAULT_TIMEOUT = 30
+
 METADEFENDER_API_BASE_URL = "https://api.metadefender.com/"
 METADEFENDER_API_FILE_REPUTATION = "v4/hash/{file}"
 METADEFENDER_API_ADDITIONAL_INFO = "v4/hash/{file}/{additional_info_key}"
@@ -20,4 +22,4 @@ METADEFENDER_JSON_HASH = "hash"
 METADEFENDER_JSON_HASH_METADATA = "metadata"
 METADEFENDER_JSON_IP = "ip"
 METADEFENDER_JSON_ADDITIONAL_INFO = "additional_info"
-METADEFENDER_CONFIG_API_KEY = "api_key"
+METADEFENDER_CONFIG_API_KEY = "api_key"  # pragma: allowlist secret

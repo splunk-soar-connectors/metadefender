@@ -16,15 +16,14 @@
 #
 # Phantom imports
 import phantom.app as phantom
-from phantom.base_connector import BaseConnector
+import requests
+# Required library imports
+import simplejson as json
 from phantom.action_result import ActionResult
+from phantom.base_connector import BaseConnector
 
 # THIS Connector imports
 from metadefender_consts import *
-
-# Required library imports
-import simplejson as json
-import requests
 
 
 class MetadefenderConnector(BaseConnector):
@@ -43,7 +42,7 @@ class MetadefenderConnector(BaseConnector):
 
         try:
 
-            r = requests.get(full_url, headers=headers)
+            r = requests.get(full_url, headers=headers, timeout=DEFAULT_TIMEOUT)
 
         except Exception as e:
 
@@ -176,6 +175,7 @@ class MetadefenderConnector(BaseConnector):
 if __name__ == '__main__':
     # Imports
     import sys
+
     import pudb
 
     # Breakpoint at runtime
@@ -200,4 +200,4 @@ if __name__ == '__main__':
         # Dump the return value
         print(ret_val)
 
-    exit(0)
+    sys.exit(0)
