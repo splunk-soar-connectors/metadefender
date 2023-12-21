@@ -1,6 +1,6 @@
 # File: metadefender_connector.py
 #
-# Copyright (c) 2016-2022 Splunk Inc.
+# Copyright (c) 2016-2023 Splunk Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ class MetadefenderConnector(BaseConnector):
     def _ip_reputation(self, params):
 
         action_result = self.add_action_result(ActionResult(params))
+        self.save_progress(f"In action handler for {self.get_action_identifier()}")
 
         ip = params[METADEFENDER_JSON_IP]
 
@@ -71,6 +72,7 @@ class MetadefenderConnector(BaseConnector):
         config = self.get_config()
 
         headers = {'apikey': config[METADEFENDER_CONFIG_API_KEY]}
+        self.save_progress("Querying Metadefender...")
 
         ret_val, response = self._make_rest_call(endpoint, headers)
 
