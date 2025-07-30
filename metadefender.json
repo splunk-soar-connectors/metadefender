@@ -4,8 +4,8 @@
     "description": "This app connects to OPSWAT Metadefender for performing investigative actions pertaining to reputation checking for ip and file",
     "type": "reputation",
     "main_module": "metadefender_connector.py",
-    "app_version": "2.0.6",
-    "utctime_updated": "2025-04-14T20:48:22.415306Z",
+    "app_version": "2.0.7",
+    "utctime_updated": "2025-07-30T17:48:55.288756Z",
     "product_vendor": "OPSWAT",
     "product_name": "Metadefender",
     "product_version_regex": ".*",
@@ -16,7 +16,10 @@
     "publisher": "Splunk",
     "package_name": "phantom_metadefender",
     "license": "Copyright (c) 2016-2025 Splunk Inc.",
-    "python_version": ["3.9", "3.13"],
+    "python_version": [
+        "3.9",
+        "3.13"
+    ],
     "latest_tested_versions": [
         "API v4 2021-02-12"
     ],

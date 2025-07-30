@@ -1,7 +1,7 @@
 # Metadefender
 
 Publisher: Splunk \
-Connector Version: 2.0.6 \
+Connector Version: 2.0.7 \
 Product Vendor: OPSWAT \
 Product Name: Metadefender \
 Minimum Product Version: 5.1.0
