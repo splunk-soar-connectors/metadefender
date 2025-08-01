@@ -16,10 +16,7 @@
     "publisher": "Splunk",
     "package_name": "phantom_metadefender",
     "license": "Copyright (c) 2016-2025 Splunk Inc.",
-    "python_version": [
-        "3.9",
-        "3.13"
-    ],
+    "python_version": "3.9, 3.13",
     "latest_tested_versions": [
         "API v4 2021-02-12"
     ],
