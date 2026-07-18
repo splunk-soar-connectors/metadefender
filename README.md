@@ -1,9 +1,9 @@
 # Metadefender
 
-Publisher: Splunk \
-Connector Version: 2.0.8 \
-Product Vendor: OPSWAT \
-Product Name: Metadefender \
+Publisher: Splunk <br>
+Connector Version: 2.0.8 <br>
+Product Vendor: OPSWAT <br>
+Product Name: Metadefender <br>
 Minimum Product Version: 5.1.0
 
 This app connects to OPSWAT Metadefender for performing investigative actions pertaining to reputation checking for ip and file
@@ -18,15 +18,15 @@ VARIABLE | REQUIRED | TYPE | DESCRIPTION
 
 ### Supported Actions
 
-[ip reputation](#action-ip-reputation) - Gets information about an IP \
-[file reputation](#action-file-reputation) - Gets information about a hash \
+[ip reputation](#action-ip-reputation) - Gets information about an IP <br>
+[file reputation](#action-file-reputation) - Gets information about a hash <br>
 [test connectivity](#action-test-connectivity) - Validates the asset configuration for connectivity
 
 ## action: 'ip reputation'
 
 Gets information about an IP
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -71,7 +71,7 @@ summary.total_objects_successful | numeric | | 1 |
 
 Gets information about a hash
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 If additional_info is checked, additional_details will be populated with available data.
@@ -560,7 +560,7 @@ summary.total_objects_successful | numeric | | 1 |
 
 Validates the asset configuration for connectivity
 
-Type: **test** \
+Type: **test** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -575,7 +575,7 @@ ______________________________________________________________________
 
 Auto-generated Splunk SOAR Connector documentation.
 
-Copyright 2025 Splunk Inc.
+Copyright 2026 Splunk Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
