@@ -112,10 +112,11 @@ class MetadefenderConnector(BaseConnector):
             self.debug_print(f"Error while fetching additional info. Error: {e}")
 
         action_result.add_data(response)
-        if "scan_results" in response:
-            action_result.set_summary({"file_result": response["scan_results"]["scan_all_result_a"]})
-        else:
-            action_result.set_summary({"file_result": "Clean"})
+        scan_verdict = response.get("scan_results", {}).get("scan_all_result_a")
+        if not scan_verdict:
+            return action_result.set_status(phantom.APP_ERROR, "MetaDefender response did not include a file scan verdict")
+
+        action_result.set_summary({"file_result": scan_verdict})
 
         return action_result.set_status(phantom.APP_SUCCESS)
 
