@@ -111,8 +111,15 @@ class MetadefenderConnector(BaseConnector):
         except Exception as e:
             self.debug_print(f"Error while fetching additional info. Error: {e}")
 
+        scan_results = response.get("scan_results", {})
+        progress_percentage = response.get("process_info", {}).get("progress_percentage")
+        if progress_percentage is None:
+            progress_percentage = scan_results.get("progress_percentage")
+        if progress_percentage != 100:
+            return action_result.set_status(phantom.APP_ERROR, "MetaDefender file scan is not complete")
+
         action_result.add_data(response)
-        scan_verdict = response.get("scan_results", {}).get("scan_all_result_a")
+        scan_verdict = scan_results.get("scan_all_result_a")
         if not scan_verdict:
             return action_result.set_status(phantom.APP_ERROR, "MetaDefender response did not include a file scan verdict")
 
